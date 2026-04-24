@@ -115,3 +115,10 @@ textarea {
     color: #f00808;
     border-color: #ee0505;
 }
+
+hr {
+    margin-top: 20px;
+    height: 3px;
+    background: linear-gradient(to right, transparent #f30639, transparent);
+    margin: 20px 0;
+}
