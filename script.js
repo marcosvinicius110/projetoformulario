@@ -26,3 +26,28 @@ function salvarCarro(event) {
 
     document.querySelector("form").reset();
 }
+
+function adicionarNatela(carro) {
+    let lista = document.getElementById ('listaCarros');
+    let card = document.createElement('div');
+    card.classList.add('card');
+
+    card.innerHTML = `
+    <h3>${carro.titulo}</h3>
+    <p><strong>preço:</strong> R$ ${carro.preco}</p>
+    <p><strong>marca:</strong> R$ ${Carro.marca}</p>
+    <p><strong>modelo:</strong> R$ ${carro.modelo}</p>
+    <p><strong>cambio:</strong> R$ ${carro.cambio}</p>
+    `
+
+    lista.appendChild(card);
+
+}
+
+window.onload = function () {
+    let carros = JSON.parse(localStorage.getItem('carros')) || [];
+
+    carros.forEach(carro => {
+        adicionarNatela(carro);
+    });
+}
