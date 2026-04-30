@@ -35,6 +35,7 @@ function adicionarNaTela(carro) {
     card.classList.add('card');
 
     card.innerHTML = `
+    <img src = "https://picsum.photos/250/150?random = ${math.random()}">
     <h3>${carro.titulo}</h3>
     <p><strong>Preço:</strong> R$ ${carro.preco}</p>
     <p><strong>Marca:</strong> ${carro.marca}</p>
@@ -53,4 +54,19 @@ window.onload = function () {
     carros.forEach(carro => {
         adicionarNaTela(carro);
     });
+}
+
+function excluirCarro(id) {
+    let carros = JSON.parse(localStorage.getItem('carros')) || [];
+
+    carros = carros.filter(carro => carro.id !== id);
+
+    localStorage.setItem('carros', JSON.stringify(carros));
+
+    document.getElementById('listaCarros').innerHTML = "";
+
+    carros.forEach()
+
+
+
 }
