@@ -1,5 +1,5 @@
 const express = require('express');
-const mysql = require('msql2');
+const mysql = require('mysql2');
 const cors = require('cors');
 
 const app = express();
@@ -9,7 +9,7 @@ app.use(express.json());
 
 //conexão com o banco de dados 
 
-const db = mysql.createconnection({
+const db = mysql.createConnection({
     host: 'localhost',
     user: 'root',
     password: '',
